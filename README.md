@@ -12,7 +12,7 @@ My portfolio site, built with Next.js 16 and React 19 from the v4 desktop design
 - **Under the hood:** a clickable diagram of what happens when you schedule a post in PostDrip, checked against the PostDrip source.
 - **Also:** how I think, toolkit, experience, what I'm exploring, and contact.
 
-All animations respect `prefers-reduced-motion`. The layout restacks at 900px and 640px (`v4.css`), and the flow diagram scrolls sideways on small screens.
+All animations respect `prefers-reduced-motion`. Scrolling assembles cards, chips and rows from scattered positions (`ScrollAssemble.tsx`), and the portrait assembles from tiles (`AssembleImage.tsx`). On mouse and trackpad devices a custom cursor follows the pointer (`CursorFollower.tsx`). The layout restacks at 900px and 640px (`v4.css`), and the flow diagram scrolls sideways on small screens.
 
 ## Code
 

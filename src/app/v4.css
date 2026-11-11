@@ -107,3 +107,10 @@ to{opacity:1;transform:none}
   .r-projrow>:nth-child(3){grid-area:stack;font-size:13px !important;color:#2B2B2B}
   .r-projrow>:nth-child(4){grid-area:year}
 }
+
+/* Custom cursor (fine pointers only; see CursorFollower) */
+html.has-custom-cursor,html.has-custom-cursor *{cursor:none !important}
+.cc-dot,.cc-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:2147483646;opacity:0;mix-blend-mode:difference;transition:opacity 200ms}
+.cc-dot{width:8px;height:8px;border-radius:99px;background:#FFFFFF;transition:opacity 200ms, transform 80ms}
+.cc-ring{width:38px;height:38px;border-radius:99px;border:1.5px solid #FFFFFF;transition:opacity 200ms, background-color 200ms, border-width 200ms}
+.cc-ring.is-hover{background:#FFFFFF;border-width:0}

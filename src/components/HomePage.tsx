@@ -4,6 +4,9 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 import { V4View } from "./V4View";
 import { BtcScreen } from "./BtcScreen";
 import { PostDripScreen } from "./PostDripScreen";
+import { AssembleImage } from "./AssembleImage";
+import { CursorFollower } from "./CursorFollower";
+import { ScrollAssemble } from "./ScrollAssemble";
 import { flowNodes, prompts, projects, links, type FlowId } from "@/data/content";
 
 type Typing = { pi: number; len: number; mode: "type" | "hold" | "del"; hold: number };
@@ -74,9 +77,16 @@ export function HomePage() {
     },
     BtcScreen,
     PostDripScreen,
+    AssembleImage,
     setPdUrl,
     links,
   };
 
-  return <V4View v={v} />;
+  return (
+    <>
+      <V4View v={v} />
+      <ScrollAssemble />
+      <CursorFollower />
+    </>
+  );
 }

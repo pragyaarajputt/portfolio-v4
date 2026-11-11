@@ -87,7 +87,7 @@ export function V4View({ v }: { v: any }) {
       </div>
     </div>
     <div style={{"position":"relative","width":"320px","maxWidth":"100%"}}>
-      <div style={{"width":"320px","maxWidth":"100%","height":"360px","borderRadius":"6px","background":"#E9EFE3","boxShadow":"0 18px 40px rgba(0,0,0,0.16)","overflow":"hidden","display":"flex","alignItems":"flex-end","justifyContent":"center"}}><img src="/pragya-cutout.webp" alt="Pragya Rajput" style={{"width":"100%","height":"100%","objectFit":"cover","objectPosition":"center top"}} /></div>
+      <v.AssembleImage src="/pragya-cutout.webp" alt="Pragya Rajput" naturalWidth={760} naturalHeight={822} background="#E9EFE3" radius={6} shadow="0 18px 40px rgba(0,0,0,0.16)" style={{"width":"320px","maxWidth":"100%","height":"360px"}} />
       <img src="/assets/ac7ecbb9ddf3b708f3cc72774a1d5807.jpg" alt="" aria-hidden="true" style={{"position":"absolute","top":"-52px","right":"30px","width":"130px","height":"130px","objectFit":"cover","transform":"rotate(10deg)","mixBlendMode":"multiply"}} />
     </div>
     <div style={{"width":"360px","maxWidth":"100%","display":"flex","flexDirection":"column","gap":"26px","marginTop":"60px"}}>
