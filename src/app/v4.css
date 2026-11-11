@@ -81,3 +81,29 @@ to{opacity:1;transform:none}
 .btc-pulse{animation:btc-pulse 1.6s ease-in-out infinite}
 @keyframes btc-pulse{0%,100%{opacity:1}50%{opacity:.35}}
 @media (prefers-reduced-motion: reduce){.btc-pulse{animation:none}}
+
+/* PostDrip tour */
+.pd-ripple{width:34px;height:34px;margin:-10px 0 0 -10px;border-radius:999px;border:2px solid #ECFF18;animation:pd-ripple 380ms ease-out forwards;pointer-events:none}
+@keyframes pd-ripple{from{transform:scale(.3);opacity:1}to{transform:scale(1.4);opacity:0}}
+
+/* Responsive. The design is desktop-first with inline styles, so these overrides use !important. */
+.r-url{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+@media (max-width: 900px){
+  .r-navlinks{display:none !important}
+  .r-cols4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .r-cols3{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .r-facts{grid-template-columns:repeat(3,minmax(0,1fr)) !important;row-gap:18px}
+  .r-hood::before{content:"swipe to explore the diagram \2192";display:block;position:sticky;left:0;padding:10px 14px 0;font:12px var(--font-jetbrains),monospace;color:#F2D64B}
+}
+@media (max-width: 640px){
+  .r-cols4,.r-cols3{grid-template-columns:minmax(0,1fr) !important}
+  .r-cols4>*{min-height:0 !important;height:auto !important}
+  img[alt^="Terminal folder icon"]{max-width:34vw !important}
+  .r-facts{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .r-exp{grid-template-columns:minmax(0,1fr) !important;gap:10px !important}
+  .r-projrow{grid-template-columns:minmax(0,1fr) auto !important;grid-template-areas:"name year" "role role" "stack stack";row-gap:4px !important;padding:14px 10px !important}
+  .r-projrow>:nth-child(1){grid-area:name}
+  .r-projrow>:nth-child(2){grid-area:role;font-size:14px !important}
+  .r-projrow>:nth-child(3){grid-area:stack;font-size:13px !important;color:#2B2B2B}
+  .r-projrow>:nth-child(4){grid-area:year}
+}

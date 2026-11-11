@@ -20,11 +20,6 @@ export const prompts = [
   "reconnect a dropped websocket and fill the gap",
 ];
 
-export const draftText =
-  "Big news: our spring menu drops Friday at 9am. Set a reminder and be first in line.";
-
-export const screens = ["Calendar", "Composer", "Queue", "Accounts"];
-
 export type Project = {
   id: string;
   mark: string;
