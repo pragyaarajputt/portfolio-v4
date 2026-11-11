@@ -2,14 +2,30 @@
 
 import { useEffect, useRef } from "react";
 
+/** A short code-style hint for what clicking does. */
+function labelFor(el: HTMLElement | null): string {
+  if (!el) return "";
+  if (el.tagName === "A") {
+    const href = el.getAttribute("href") || "";
+    if (href.startsWith("#")) return "cd " + href;
+    if (href.startsWith("mailto:")) return "mail()";
+    if (href.endsWith(".pdf")) return "open resume.pdf";
+    return "open ↗";
+  }
+  if (el.classList.contains("v4-dock")) return "git checkout " + (el.getAttribute("aria-label") || "").split(" ")[0].toLowerCase();
+  if (el.classList.contains("v4f-card")) return "inspect()";
+  return "run()";
+}
+
 /**
  * A custom cursor: a dot that tracks the pointer exactly and a ring that follows with a lag.
- * The ring grows over links and buttons and squeezes on press. Only on fine pointers
+ * The ring grows over links and buttons and squeezes on press; a small label says what a click does. Only on fine pointers
  * (mouse / trackpad) and never with prefers-reduced-motion; touch devices keep their default.
  */
 export function CursorFollower() {
   const dot = useRef<HTMLDivElement>(null);
   const ring = useRef<HTMLDivElement>(null);
+  const tag = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
@@ -22,6 +38,8 @@ export function CursorFollower() {
     const r = ring.current;
     let x = -100, y = -100, rx = -100, ry = -100;
     let hover = false, down = false, visible = false;
+    let label = "";
+    const t = tag.current;
     let raf = 0;
 
     const onMove = (e: PointerEvent) => {
@@ -33,8 +51,9 @@ export function CursorFollower() {
         ry = y;
         d.style.opacity = r.style.opacity = "1";
       }
-      const t = e.target as Element | null;
-      hover = !!t?.closest("a, button, [role='button'], summary, label, .v4-dock, .v4f-card");
+      const hit = (e.target as Element | null)?.closest("a, button, [role='button'], summary, label, .v4-dock, .v4f-card") as HTMLElement | null;
+      hover = !!hit;
+      label = labelFor(hit);
     };
     const onLeave = () => {
       visible = false;
@@ -50,6 +69,11 @@ export function CursorFollower() {
       d.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) scale(${hover ? 0 : 1})`;
       r.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%) scale(${s})`;
       r.classList.toggle("is-hover", hover);
+      if (t) {
+        t.textContent = label;
+        t.classList.toggle("is-on", !!label && visible);
+        t.style.transform = `translate3d(${x + 18}px, ${y + 16}px, 0)`;
+      }
       raf = requestAnimationFrame(loop);
     };
 
@@ -72,6 +96,7 @@ export function CursorFollower() {
     <>
       <div ref={ring} className="cc-ring" aria-hidden="true" />
       <div ref={dot} className="cc-dot" aria-hidden="true" />
+      <div ref={tag} className="cc-label" aria-hidden="true" />
     </>
   );
 }

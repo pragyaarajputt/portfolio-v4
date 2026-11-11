@@ -7,6 +7,7 @@ import { PostDripScreen } from "./PostDripScreen";
 import { AssembleImage } from "./AssembleImage";
 import { CursorFollower } from "./CursorFollower";
 import { ScrollAssemble } from "./ScrollAssemble";
+import { DevChrome } from "./DevChrome";
 import { flowNodes, prompts, projects, links, type FlowId } from "@/data/content";
 
 type Typing = { pi: number; len: number; mode: "type" | "hold" | "del"; hold: number };
@@ -87,6 +88,7 @@ export function HomePage() {
       <V4View v={v} />
       <ScrollAssemble />
       <CursorFollower />
+      <DevChrome />
     </>
   );
 }

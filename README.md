@@ -21,6 +21,7 @@ All animations respect `prefers-reduced-motion`. Scrolling assembles cards, chip
 | `src/components/V4View.tsx` | The page markup, converted from the design mockup (exact colours, spacing and type) |
 | `src/components/HomePage.tsx` | State: typing prompt, project dock and flow diagram |
 | `src/components/BtcScreen.tsx` | The animated BTC chart screen (SVG) |
+| `src/components/DevChrome.tsx` | Editor-style status bar and the command palette (Ctrl/⌘+K or /) |
 | `src/components/PostDripScreen.tsx` | The PostDrip tour: real screenshots, a cursor and the typed AI caption |
 | `src/data/content.ts` | All facts and copy. Every claim comes from my resume or my repos |
 | `src/app/v4.css` | Shared classes and keyframes from the design |
