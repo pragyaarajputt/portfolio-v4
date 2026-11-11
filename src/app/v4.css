@@ -1,0 +1,83 @@
+/* From the v4 design mockup. */
+body{margin:0;background:#FFFFFF}
+
+a{color:#141414}
+a:hover{color:#2E5C3A}
+
+.v4-grid{background-color:#FFFFFF;background-image:linear-gradient(#EFEFEF 1px,transparent 1px),linear-gradient(90deg,#EFEFEF 1px,transparent 1px);background-size:64px 64px}
+
+.v4-grain{background-image:radial-gradient(rgba(255,255,255,0.22) 1px,transparent 1.4px),radial-gradient(rgba(0,0,0,0.06) 1px,transparent 1.4px);background-size:7px 7px,11px 11px;background-position:0 0,3px 4px}
+
+.v4-pill{transition:transform 200ms cubic-bezier(.2,.8,.2,1),background-color 200ms}
+
+.v4-pill:hover{transform:translateY(-2px)}
+
+.v4-pill:focus-visible,.v4-dock:focus-visible,.v4-link:focus-visible{outline:2px solid #2E5C3A;outline-offset:3px}
+
+.v4-dock{transition:transform 220ms cubic-bezier(.2,.8,.2,1)}
+
+.v4-dock:hover{transform:translateY(-8px) scale(1.08)}
+
+.v4-sticker{transition:transform 260ms cubic-bezier(.2,.8,.2,1)}
+
+.v4-sticker:hover{transform:rotate(0deg) translateY(-4px)}
+
+.v4-row{transition:background-color 200ms}
+
+.v4-row:hover{background:#F7F3FA}
+
+.v4-link{text-decoration:underline;text-decoration-color:#E0B9E2;text-decoration-thickness:2px;text-underline-offset:5px}
+
+.v4-art{position:relative;width:100%;max-width:920px;container-type:inline-size}
+
+.v4-hand{transform:translateY(0)}
+
+.v4-typing .v4-hand-l{animation:v4-press 300ms ease-in-out infinite}
+
+.v4-typing .v4-hand-r{animation:v4-press 300ms ease-in-out 150ms infinite}
+
+@keyframes v4-press{0%,100%{transform:translateY(0)}
+50%{transform:translateY(4px)}
+}
+
+.v4-key{opacity:0}
+
+.v4-typing .v4-key{animation:v4-key 600ms steps(1) infinite}
+
+@keyframes v4-key{0%{opacity:0.95}
+30%{opacity:0}
+}
+
+.v4-caret{animation:v4-blink 1s steps(1) infinite}
+
+@keyframes v4-blink{50%{opacity:0}
+}
+
+.v4-cursor{transition:left 600ms cubic-bezier(.22,1,.36,1),top 600ms cubic-bezier(.22,1,.36,1)}
+
+.v4-screen{animation:v4-in 360ms cubic-bezier(.22,1,.36,1)}
+
+@keyframes v4-in{from{opacity:0;transform:translateY(8px)}
+to{opacity:1;transform:none}
+}
+
+.v4f-card{transition:border-color 200ms,box-shadow 200ms,background-color 200ms}
+
+.v4f-card:hover{border-color:#92949B !important}
+
+.v4f-card:focus-visible{outline:2px solid #E0B9E2;outline-offset:3px}
+
+.v4f-card.is-sel{border-color:#E0B9E2 !important;box-shadow:0 0 0 2px #E0B9E2}
+
+.v4f-dia.is-sel{background:#7A5A8C !important}
+
+@media (prefers-reduced-motion: reduce){.v4f-card{transition:none}
+.v4-pill,.v4-dock,.v4-sticker,.v4-cursor{transition:none}
+.v4-hand-l,.v4-hand-r,.v4-key,.v4-caret,.v4-screen{animation:none !important}
+}
+
+
+/* BTC screen */
+.btc-pulse{animation:btc-pulse 1.6s ease-in-out infinite}
+@keyframes btc-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){.btc-pulse{animation:none}}
