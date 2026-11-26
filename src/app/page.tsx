@@ -1,4 +1,5 @@
-import { HomePage } from "@/components/HomePage";
+// The previous "Bright Collage" design is kept in components/HomePage.tsx (and app/v4.css) to switch back easily.
+import { MinimalHome } from "@/components/minimal/MinimalHome";
 import { links, siteUrl } from "@/data/content";
 
 // Structured data so search engines know who this site is about.
@@ -17,7 +18,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, "\\u003c") }} />
-      <HomePage />
+      <MinimalHome />
     </>
   );
 }

@@ -192,3 +192,37 @@ export const flowNodes: Record<FlowId, { label: string; tech: string; title: str
     why: "Failures retry after 30s, 2m, 8m and 30m; the fifth failure is final and shown to the user.",
   },
 };
+
+/** One-line card copy for the minimal layout. Each line restates a fact already in `projects` above. */
+export const cardCopy: Record<string, { short: string; status: string; live: boolean }> = {
+  policylens: {
+    short: "Health-insurance policies turned into 20 cited answers, with every quote checked against the PDF.",
+    status: "Live · 19/19 facts right",
+    live: true,
+  },
+  creatordesk: {
+    short: "Brand deals, GST invoices and payment reminders for Indian creators.",
+    status: "Live · Google sign-in",
+    live: true,
+  },
+  postdrip: {
+    short: "Write once with AI, then schedule to five social platforms, published on time by a background worker.",
+    status: "Live · 250+ tests",
+    live: true,
+  },
+  btc: {
+    short: "A live BTC/USDT chart that stays correct when the connection drops.",
+    status: "Live",
+    live: true,
+  },
+  planetpulse: {
+    short: "Meeting minutes written and emailed automatically when a call ends.",
+    status: "Internal tool · CETIZION",
+    live: false,
+  },
+  payslip: {
+    short: "Payslips straight from the payroll database, cutting manual HR effort by 80%.",
+    status: "Internal tool · CETIZION",
+    live: false,
+  },
+};

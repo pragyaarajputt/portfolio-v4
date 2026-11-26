@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Archivo, Geist_Mono, Homemade_Apple, JetBrains_Mono } from "next/font/google";
+import { Archivo, Geist, Geist_Mono, Homemade_Apple, JetBrains_Mono } from "next/font/google";
 import { siteUrl } from "@/data/content";
 import "./globals.css";
-import "./v4.css";
+import "./minimal.css";
 
 const archivo = Archivo({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-archivo" });
 const hand = Homemade_Apple({ subsets: ["latin"], weight: "400", variable: "--font-hand" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-jetbrains" });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const geistMono = Geist_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-geist-mono" });
 
 const title = "Pragya Rajput, full-stack developer";
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${hand.variable} ${jetbrains.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geist.variable} ${archivo.variable} ${hand.variable} ${jetbrains.variable} ${geistMono.variable}`}>
       <body>{children}</body>
     </html>
   );
