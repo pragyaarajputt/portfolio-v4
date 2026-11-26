@@ -4,7 +4,16 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { cardCopy, links, projects, type Project } from "@/data/content";
 import { About } from "./About";
 
-const STOPS = ["commit", "build", "test", "deploy", "live"];
+// The pipeline under the work tells a tiny shipping story as you scroll (decorative, not data).
+const STOPS = [
+  { label: "commit", note: "git commit -m “idea”" },
+  { label: "build", note: "compiled ✓" },
+  { label: "test", note: "all green ✓" },
+  { label: "deploy", note: "shipping…" },
+  { label: "live", note: "it’s live ✦" },
+];
+
+const STACK = ["React", "Next.js", "TypeScript", "Node.js", "NestJS", "PostgreSQL", "Prisma", "Python", "FastAPI", "Gemini", "Claude", "Vitest", "Docker"];
 
 /** Card header art: the real app (video poster or screenshot) where one exists, otherwise a quiet illustration. */
 function CardArt({ p }: { p: Project }) {
@@ -78,8 +87,21 @@ function CardArt({ p }: { p: Project }) {
 
 function Card({ p }: { p: Project }) {
   const c = cardCopy[p.id];
+  // A gentle tilt toward the pointer (mouse only; CSS ignores it for reduced motion).
+  const tilt = (e: React.PointerEvent<HTMLElement>) => {
+    if (e.pointerType !== "mouse") return;
+    const r = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    e.currentTarget.style.setProperty("--ry", `${(x * 7).toFixed(2)}deg`);
+    e.currentTarget.style.setProperty("--rx", `${(-y * 7).toFixed(2)}deg`);
+  };
+  const reset = (e: React.PointerEvent<HTMLElement>) => {
+    e.currentTarget.style.setProperty("--ry", "0deg");
+    e.currentTarget.style.setProperty("--rx", "0deg");
+  };
   return (
-    <article className="m-card" aria-labelledby={`card-${p.id}`}>
+    <article className="m-card" aria-labelledby={`card-${p.id}`} onPointerMove={tilt} onPointerLeave={reset}>
       <CardArt p={p} />
       <div className="m-card-body">
         <h3 id={`card-${p.id}`}>{p.name}</h3>
@@ -183,9 +205,19 @@ export function MinimalHome() {
             <div ref={trackRef} className="m-track">
               <div className="m-hero">
                 <h1>
-                  I build the product, <em>not just the page.</em>
+                  I build the product,{" "}
+                  <span className="m-scribble">
+                    <em>not just the page.</em>
+                    <svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true">
+                      <path d="M4 16 C 60 6, 120 22, 180 12 S 270 8, 296 14" />
+                    </svg>
+                  </span>
                 </h1>
                 <div className="m-hero-side">
+                  <span className="m-available">
+                    <span className="m-pulse" aria-hidden="true" />
+                    Open to full-time roles
+                  </span>
                   <p>
                     Full-stack developer · Jr. Software Developer at CETIZION Verifica, New Delhi
                   </p>
@@ -209,9 +241,10 @@ export function MinimalHome() {
               </div>
               <ol>
                 {STOPS.map((s, i) => (
-                  <li key={s} className={i <= reached ? "is-on" : ""}>
+                  <li key={s.label} className={i <= reached ? "is-on" : ""}>
                     <span className="m-stop" />
-                    {s}
+                    {s.label}
+                    <span className="m-note">{s.note}</span>
                   </li>
                 ))}
               </ol>
@@ -219,9 +252,29 @@ export function MinimalHome() {
           </div>
         </section>
 
+        <div className="m-ribbon" aria-label="Stack">
+          <div className="m-ribbon-track">
+            {[0, 1].map((copy) => (
+              <span key={copy} aria-hidden={copy === 1 ? true : undefined}>
+                {STACK.map((t) => (
+                  <span key={t} className="m-ribbon-item">
+                    {t}
+                    <span className="m-ribbon-star" aria-hidden="true">
+                      ✦
+                    </span>
+                  </span>
+                ))}
+              </span>
+            ))}
+          </div>
+        </div>
+
         <About />
       </main>
 
+      <div className="m-bigname" aria-hidden="true">
+        Pragya <em>Rajput</em>
+      </div>
       <footer className="m-footer">
         <span>Pragya Rajput</span>
         <nav aria-label="Elsewhere">

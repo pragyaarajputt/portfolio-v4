@@ -1,4 +1,5 @@
 import { links } from "@/data/content";
+import { CountUp } from "./CountUp";
 import { EmailActions } from "./EmailActions";
 
 // Every line here restates a fact already on the site (content.ts and the previous design's sections).
@@ -61,7 +62,9 @@ export function About() {
           <dl>
             {stats.map((s) => (
               <div key={s.label}>
-                <dt>{s.value}</dt>
+                <dt>
+                  <CountUp value={s.value} />
+                </dt>
                 <dd>{s.label}</dd>
               </div>
             ))}
