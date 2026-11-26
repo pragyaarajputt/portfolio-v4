@@ -144,19 +144,7 @@ export const projects: Project[] = [
     note: "Company project. The code is private.",
     image: { src: "/projects/planetpulse.webp", alt: "PlanetPulse Notetaker sign-in screen: “Your meetings, recapped.”" },
   },
-  {
-    id: "payslip",
-    mark: "HR",
-    bg: "#FFFFFF",
-    name: "Payslip automation",
-    role: "Full-stack · CETIZION Verifica",
-    stack: "MongoDB · Express · React · Node.js",
-    year: "2025",
-    url: "internal tool",
-    blurb:
-      "Payslips generated straight from the payroll database instead of by hand, with role-based access for HR and staff. It cut manual HR effort by 80% and taught me how a business actually runs on software.",
-    note: "Company project. The code is private.",
-  },
+
 ];
 
 export type FlowId = "client" | "api" | "auth" | "db" | "queue" | "ai" | "social";
@@ -245,9 +233,5 @@ export const cardCopy: Record<string, { short: string; status: string; live: boo
     status: "Internal tool · CETIZION",
     live: false,
   },
-  payslip: {
-    short: "Payslips straight from the payroll database, cutting manual HR effort by 80%.",
-    status: "Internal tool · CETIZION",
-    live: false,
-  },
+
 };
