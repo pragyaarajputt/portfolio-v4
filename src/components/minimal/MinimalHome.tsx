@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { cardCopy, links, projects, type Project } from "@/data/content";
+import { About } from "./About";
 
 const STOPS = ["commit", "build", "test", "deploy", "live"];
 
@@ -206,53 +207,7 @@ export function MinimalHome() {
           </div>
         </section>
 
-        <section id="about" className="m-about" aria-labelledby="about-h">
-          <h2 id="about-h">
-            <span className="m-soft">Hey, I’m</span>{" "}
-            <span className="m-face">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/pragya-cutout.webp" alt="Pragya Rajput" />
-            </span>{" "}
-            Pragya, <span className="m-soft">a</span> full&#8209;stack developer <span className="m-soft">based in</span> New Delhi.
-          </h2>
-          <p>
-            I started on the frontend at Tejo Tech, then moved across the whole stack at CETIZION Verifica: data model, API and the
-            screens people use every day.
-          </p>
-          <p>
-            The work I like best removes a chore from someone’s month: payslips HR used to build by hand, meeting minutes nobody wanted
-            to write, insurance policies nobody could read.
-          </p>
-          <div className="m-about-cta">
-            <a href={links.resume} target="_blank" rel="noopener noreferrer" className="m-pill">
-              Resume ↗
-            </a>
-            <a href={links.github} target="_blank" rel="noopener noreferrer" className="m-pill m-pill-line">
-              GitHub ↗
-            </a>
-          </div>
-
-          <dl className="m-exp">
-            <div>
-              <dt>May 2025 — Now</dt>
-              <dd>
-                Jr. Software Developer, CETIZION Verifica <span>React · Next.js · Node.js · MongoDB · Python · FastAPI</span>
-              </dd>
-            </div>
-            <div>
-              <dt>Jan — Mar 2025</dt>
-              <dd>
-                Web Developer Intern, Tejo Tech Group <span>React · Tailwind CSS</span>
-              </dd>
-            </div>
-            <div>
-              <dt>2021 — 2025</dt>
-              <dd>
-                B.Tech, Computer Science &amp; Engineering <span>Manav Rachna University</span>
-              </dd>
-            </div>
-          </dl>
-        </section>
+        <About />
       </main>
 
       <footer className="m-footer">
