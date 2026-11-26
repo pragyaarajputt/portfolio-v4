@@ -42,6 +42,8 @@ export type Project = {
   note?: string;
   /** A recorded walkthrough of the real app, shown in the window card. */
   video?: { src: string; poster: string; label: string };
+  /** A still of the product (only public screens, never company-internal ones). */
+  image?: { src: string; alt: string };
 };
 
 // Facts for PolicyLens and CreatorDesk are from their READMEs and evals (checked 2026-11-26).
@@ -113,6 +115,7 @@ export const projects: Project[] = [
       "A safety-observation platform for factories: workers report safe, unsafe and near-miss observations on mobile, and HSE teams act on them on the web. I built the first version, then in the team’s rebuild the observations API (idempotent submit, a status state machine, severity rules enforced in Zod and Postgres, role-based visibility, cursor pagination) and the HSE web console.",
     live: "https://trynotch.app",
     note: "Team project. The code is private.",
+    image: { src: "/projects/notch.webp", alt: "Notch's public homepage: “Notch helps improve safety of your workplace”" },
   },
   {
     id: "btc",

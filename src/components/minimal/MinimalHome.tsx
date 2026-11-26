@@ -26,6 +26,14 @@ function CardArt({ p }: { p: Project }) {
       </div>
     );
   }
+  if (p.image) {
+    return (
+      <div className="m-card-art">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={p.image.src} alt={p.image.alt} loading="lazy" />
+      </div>
+    );
+  }
   if (p.id === "postdrip") {
     return (
       <div className="m-card-art">
