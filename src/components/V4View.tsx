@@ -36,7 +36,7 @@ export function V4View({ v }: { v: any }) {
       </div>
     </div>
     <h1 style={{"margin":"0","fontSize":"clamp(56px, 8.2vw, 124px)","lineHeight":"0.95","letterSpacing":"-0.045em","fontWeight":"500","color":"#FFFFFF","maxWidth":"1100px"}}>I build the product, not just the page.</h1>
-    <p style={{"margin":"18px 0 0","maxWidth":"640px","fontSize":"19px","lineHeight":"1.55","color":"#FFFFFF"}}>About a year and a half of building real applications: React and Next.js interfaces, Node and Express APIs, the databases and auth underneath — and AI where it actually helps. I built PostDrip AI end to end, on my own.</p>
+    <p style={{"margin":"18px 0 0","maxWidth":"640px","fontSize":"19px","lineHeight":"1.55","color":"#FFFFFF"}}>About a year and a half of building real applications: React and Next.js interfaces, Node and Express APIs, the databases and auth underneath — and AI where it actually helps. I built PostDrip AI, CreatorDesk and PolicyLens end to end, on my own.</p>
     <div style={{"display":"flex","flexWrap":"wrap","justifyContent":"center","gap":"12px","marginTop":"18px"}}>
       <a href="#work" className="v4-pill" style={{"minHeight":"48px","display":"inline-flex","alignItems":"center","padding":"0 24px","borderRadius":"999px","background":"#ECFF18","color":"#141414","textDecoration":"none","fontWeight":"600"}}>Explore projects</a>
       <a href={v.links.resume} target="_blank" rel="noopener noreferrer" className="v4-pill" style={{"minHeight":"48px","display":"inline-flex","alignItems":"center","padding":"0 24px","borderRadius":"999px","background":"#FFFFFF","color":"#141414","textDecoration":"none","fontWeight":"600"}}>Résumé (PDF) ↓</a>
@@ -97,10 +97,10 @@ export function V4View({ v }: { v: any }) {
       </div>
       <div style={{"display":"flex","alignItems":"center","gap":"18px"}}>
     <div className="v4-sticker" style={{"transform":"rotate(3deg)","width":"220px","flex":"none","background":"#F2D64B","borderRadius":"18px","padding":"18px 20px","boxShadow":"0 14px 36px rgba(0,0,0,0.14)","display":"flex","flexDirection":"column","gap":"8px"}}>
-      <div style={{"fontSize":"12px","fontWeight":"600","letterSpacing":"0.08em","textTransform":"uppercase"}}>Now building</div>
-      <div style={{"fontSize":"26px","fontWeight":"600","letterSpacing":"-0.02em"}}>PostDrip AI</div>
-      <div style={{"height":"6px","borderRadius":"99px","background":"rgba(20,20,20,0.15)"}}><div style={{"width":"68%","height":"6px","borderRadius":"99px","background":"#141414"}}></div></div>
-      <div style={{"fontSize":"13px"}}>AI social scheduling · Live</div>
+      <div style={{"fontSize":"12px","fontWeight":"600","letterSpacing":"0.08em","textTransform":"uppercase"}}>Just shipped</div>
+      <div style={{"fontSize":"26px","fontWeight":"600","letterSpacing":"-0.02em"}}>PolicyLens</div>
+      <div style={{"height":"6px","borderRadius":"99px","background":"rgba(20,20,20,0.15)"}}><div style={{"width":"100%","height":"6px","borderRadius":"99px","background":"#141414"}}></div></div>
+      <div style={{"fontSize":"13px"}}>Health-insurance policy decoder · Live</div>
     </div>
         <img className="v4-sticker" src="/assets/cadd351f2fcba8a5d013c003f6ccf265.jpg" alt="" aria-hidden="true" style={{"transform":"rotate(-8deg)","width":"110px","height":"110px","borderRadius":"18px","objectFit":"cover","boxShadow":"0 12px 28px rgba(0,0,0,0.16)"}} />
       </div>
@@ -114,7 +114,7 @@ export function V4View({ v }: { v: any }) {
     <h2 id="about-h" style={{"flex":"1 1 420px","margin":"0","fontSize":"clamp(64px, 9vw, 132px)","lineHeight":"0.92","letterSpacing":"-0.05em","fontWeight":"500"}}>a little about me</h2>
     <div style={{"flex":"1 1 420px","display":"flex","flexDirection":"column","gap":"18px","fontSize":"18px","lineHeight":"1.6","paddingTop":"12px"}}>
       <p style={{"margin":"0"}}>I started on the frontend, building a React interface for a fire detection platform at Tejo Tech. At CETIZION Verifica I moved across the whole stack, and the work I’m proudest of removed a chore from someone’s month: payslips HR used to build by hand, proposals that used to be put together and emailed one at a time.</p>
-      <p style={{"margin":"0"}}>PostDrip AI is where that shows best: one product I took from an empty repo to a live app, with a background publishing worker and 240 backend tests.</p>
+      <p style={{"margin":"0"}}>PostDrip AI is where that shows best: one product I took from an empty repo to a live app, with a background publishing worker and 250+ backend tests.</p>
       <p style={{"margin":"8px 0 0","fontFamily":"var(--font-hand), cursive","fontSize":"20px","lineHeight":"1.7","color":"#2E5C3A"}}>i build the product, not just the page.</p>
     </div>
   </div>
@@ -144,6 +144,7 @@ export function V4View({ v }: { v: any }) {
       </div>
       {v.proj.isFlagship && (<v.PostDripScreen onUrl={v.setPdUrl} />)}
       {v.proj.isBtc && (<v.BtcScreen />)}
+      {v.proj.isVideo && (<v.ProjectVideo src={v.proj.video.src} poster={v.proj.video.poster} label={v.proj.video.label} />)}
       {v.proj.isOther && (<>
         <div style={{"aspectRatio":"16 / 7","background":"#F1F4F7","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center","gap":"10px","padding":"24px","textAlign":"center","fontFamily":"var(--font-jetbrains), monospace","fontSize":"13px","color":"#3D5A73"}}><span style={{"fontSize":"40px"}} aria-hidden="true">🔒</span><span>Internal tool · {v.proj.stack}</span><span>Screens are private, so there’s no preview here.</span></div>
       </>)}

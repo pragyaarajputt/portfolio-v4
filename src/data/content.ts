@@ -10,7 +10,14 @@ export const links = {
   postdrip: "https://ai-social-platform-nine.vercel.app",
   postdripCode: "https://github.com/pragyaarajputt/ai-social-platform",
   btc: "https://btc-live-chart-seven.vercel.app",
+  policylens: "https://policylens-mocha.vercel.app",
+  policylensCode: "https://github.com/pragyaarajputt/policylens",
+  creatordesk: "https://creatordesk-gray.vercel.app",
+  creatordeskCode: "https://github.com/pragyaarajputt/creatordesk",
 };
+
+/** The site's public address, for metadata, the sitemap and share previews. */
+export const siteUrl = "https://pragyarajput.vercel.app";
 
 /** Prompts typed in the hero terminal. */
 export const prompts = [
@@ -33,9 +40,50 @@ export type Project = {
   live?: string;
   code?: string;
   note?: string;
+  /** A recorded walkthrough of the real app, shown in the window card. */
+  video?: { src: string; poster: string; label: string };
 };
 
+// Facts for PolicyLens and CreatorDesk are from their READMEs and evals (checked 2026-11-26).
 export const projects: Project[] = [
+  {
+    id: "policylens",
+    mark: "PL",
+    bg: "#BFE3DF",
+    name: "PolicyLens",
+    role: "Solo full-stack developer",
+    stack: "Next.js 16 · Prisma · PostgreSQL · Gemini · Vitest",
+    year: "2026",
+    url: "policylens-mocha.vercel.app",
+    blurb:
+      "Upload an Indian health-insurance policy and get 20 plain answers, each quoting its clause and page, checked word for word against the PDF in code. A claim calculator works out what a hospital bill really pays, rule by rule, and a timeline gives the date each waiting period ends. On a real insurer’s 25-page policy: 19 of 19 facts right.",
+    live: links.policylens,
+    code: links.policylensCode,
+    video: {
+      src: "/projects/policylens.mp4",
+      poster: "/projects/policylens-poster.jpg",
+      label: "PolicyLens walkthrough: verified clauses, claim calculator, waiting-period dates, comparison and policy card",
+    },
+  },
+  {
+    id: "creatordesk",
+    mark: "CD",
+    bg: "#F6C4C4",
+    name: "CreatorDesk",
+    role: "Solo full-stack developer",
+    stack: "Next.js 16 · Prisma · PostgreSQL · Auth.js · Gemini",
+    year: "2026",
+    url: "creatordesk-gray.vercel.app",
+    blurb:
+      "Brand deals and payments for Indian creators: a pipeline from pitch to paid, GST invoices with gap-free numbering (tested with 20 at once), partial payments with TDS, and polite-to-firm payment reminders. An AI brief reader turns a brand’s DM into a deal and flags risky terms, measured on 40 labelled briefs.",
+    live: links.creatordesk,
+    code: links.creatordeskCode,
+    video: {
+      src: "/projects/creatordesk.mp4",
+      poster: "/projects/creatordesk-poster.jpg",
+      label: "CreatorDesk walkthrough",
+    },
+  },
   {
     id: "postdrip",
     mark: "PD",
@@ -46,7 +94,7 @@ export const projects: Project[] = [
     year: "2026",
     url: "ai-social-platform-nine.vercel.app/calendar",
     blurb:
-      "An AI social media scheduler: write a post with AI help, put it on a calendar, and let a background worker publish it on time to Instagram, Facebook Pages, LinkedIn, X and Bluesky. 240 backend tests in CI.",
+      "An AI social media scheduler: write a post with AI help, put it on a calendar, and let a background worker publish it on time to Instagram, Facebook Pages, LinkedIn, X and Bluesky. 250+ backend tests in CI.",
     live: links.postdrip,
     code: links.postdripCode,
   },

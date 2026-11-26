@@ -4,6 +4,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 import { V4View } from "./V4View";
 import { BtcScreen } from "./BtcScreen";
 import { PostDripScreen } from "./PostDripScreen";
+import { ProjectVideo } from "./ProjectVideo";
 import { AssembleImage } from "./AssembleImage";
 import { CursorFollower } from "./CursorFollower";
 import { ScrollAssemble } from "./ScrollAssemble";
@@ -74,8 +75,10 @@ export function HomePage() {
       url: cur.id === "postdrip" ? pdUrl : cur.url,
       isFlagship: cur.id === "postdrip",
       isBtc: cur.id === "btc",
-      isOther: cur.id !== "postdrip" && cur.id !== "btc",
+      isVideo: Boolean(cur.video),
+      isOther: cur.id !== "postdrip" && cur.id !== "btc" && !cur.video,
     },
+    ProjectVideo,
     BtcScreen,
     PostDripScreen,
     AssembleImage,

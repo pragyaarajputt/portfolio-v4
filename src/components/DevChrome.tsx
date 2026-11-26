@@ -100,6 +100,8 @@ export function DevChrome() {
       { id: "resume", group: "Open", title: "Résumé (PDF)", hint: "resume.pdf", run: () => openUrl(links.resume) },
       { id: "github", group: "Open", title: "GitHub", hint: "github.com/pragyaarajputt", run: () => openUrl(links.github) },
       { id: "linkedin", group: "Open", title: "LinkedIn", hint: "in/pragya-rajput31", run: () => openUrl(links.linkedin) },
+      { id: "policylens", group: "Open", title: "PolicyLens, live app", hint: "vercel.app", run: () => openUrl(links.policylens) },
+      { id: "creatordesk", group: "Open", title: "CreatorDesk, live app", hint: "vercel.app", run: () => openUrl(links.creatordesk) },
       { id: "postdrip", group: "Open", title: "PostDrip AI, live app", hint: "vercel.app", run: () => openUrl(links.postdrip) },
       { id: "btc", group: "Open", title: "BTC/USDT live chart", hint: "vercel.app", run: () => openUrl(links.btc) },
       {
