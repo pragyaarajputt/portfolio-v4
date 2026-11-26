@@ -142,6 +142,7 @@ export const projects: Project[] = [
     blurb:
       "Minutes of meeting, written and emailed automatically when a call ends. A bot transcribes Hindi and English calls with real speaker names, an LLM writes schema-validated minutes, and HMAC-verified webhooks keep it reliable. About $0.30 per two-hour meeting.",
     note: "Company project. The code is private.",
+    image: { src: "/projects/planetpulse.webp", alt: "PlanetPulse Notetaker sign-in screen: “Your meetings, recapped.”" },
   },
   {
     id: "payslip",
