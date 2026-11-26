@@ -30,12 +30,7 @@ export function About() {
       <div className="a-head">
         <p className="a-kicker">About</p>
         <h2 id="about-h">
-          <span className="m-soft">Hey, I’m</span>{" "}
-          <span className="m-face">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/pragya-cutout.webp" alt="Pragya Rajput" />
-          </span>{" "}
-          Pragya, <span className="m-soft">a</span> <mark className="a-mark">full&#8209;stack developer</mark>{" "}
+          <span className="m-soft">Hey, I’m</span> Pragya, <span className="m-soft">a</span> <mark className="a-mark">full&#8209;stack developer</mark>{" "}
           <span className="m-soft">based in</span> New Delhi.
         </h2>
       </div>
