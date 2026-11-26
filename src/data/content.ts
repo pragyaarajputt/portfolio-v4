@@ -99,6 +99,22 @@ export const projects: Project[] = [
     code: links.postdripCode,
   },
   {
+    // Team project (PlanetPulse). Pragya built the first version (React Native + Node.js + MongoDB) and, in the
+    // NestJS rebuild, the observations API and the HSE web console. Facts checked against the repo on 2026-11-26.
+    id: "notch",
+    mark: "NT",
+    bg: "#FFE3C8",
+    name: "Notch",
+    role: "Observations API + HSE web console · PlanetPulse team",
+    stack: "NestJS 11 · Drizzle · PostgreSQL · Next.js 16 · Zod",
+    year: "2026",
+    url: "trynotch.app",
+    blurb:
+      "A safety-observation platform for factories: workers report safe, unsafe and near-miss observations on mobile, and HSE teams act on them on the web. I built the first version, then in the team’s rebuild the observations API (idempotent submit, a status state machine, severity rules enforced in Zod and Postgres, role-based visibility, cursor pagination) and the HSE web console.",
+    live: "https://trynotch.app",
+    note: "Team project. The code is private.",
+  },
+  {
     id: "btc",
     mark: "₿",
     bg: "#ECFF18",
@@ -208,6 +224,11 @@ export const cardCopy: Record<string, { short: string; status: string; live: boo
   postdrip: {
     short: "Write once with AI, then schedule to five social platforms, published on time by a background worker.",
     status: "Live · 250+ tests",
+    live: true,
+  },
+  notch: {
+    short: "Safe, unsafe and near-miss reports for factories. I built its observations API and the HSE web console.",
+    status: "Live · team project",
     live: true,
   },
   btc: {
