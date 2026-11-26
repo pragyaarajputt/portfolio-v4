@@ -20,9 +20,9 @@ const exploring = ["LLM apps & evals", "RAG & vector search", "Realtime & WebSoc
 const stack = ["React", "Next.js", "TypeScript", "Node.js", "Express", "PostgreSQL", "Prisma", "MongoDB", "Python", "FastAPI", "Gemini · Claude"];
 
 const experience = [
-  { when: "May 2025 — Now", what: "Jr. Software Developer", where: "CETIZION Verifica", dot: "#D9F24A", stack: ["React", "Next.js", "Node.js", "MongoDB", "Python", "FastAPI"] },
-  { when: "Jan — Mar 2025", what: "Web Developer Intern", where: "Tejo Tech Group", dot: "#9FC2FF", stack: ["React", "Tailwind CSS"] },
-  { when: "2021 — 2025", what: "B.Tech, Computer Science & Engineering", where: "Manav Rachna University", dot: "#F4B9D6", stack: [] as string[] },
+  { when: "May 2025 — Now", what: "Jr. Software Developer", where: "CETIZION Verifica", dot: "#A9B4FF", stack: ["React", "Next.js", "Node.js", "MongoDB", "Python", "FastAPI"] },
+  { when: "Jan — Mar 2025", what: "Web Developer Intern", where: "Tejo Tech Group", dot: "#8FD1AE", stack: ["React", "Tailwind CSS"] },
+  { when: "2021 — 2025", what: "B.Tech, Computer Science & Engineering", where: "Manav Rachna University", dot: "#E2B98F", stack: [] as string[] },
 ];
 
 export function About() {
@@ -31,7 +31,7 @@ export function About() {
       <div className="a-head">
         <p className="a-kicker">About</p>
         <h2 id="about-h">
-          <span className="m-soft">Hey, I’m</span> Pragya, <span className="m-soft">a</span> <mark className="a-mark">full&#8209;stack developer</mark>{" "}
+          <span className="m-soft">Hey, I’m</span> Pragya, <span className="m-soft">a</span> <em>full&#8209;stack developer</em>{" "}
           <span className="m-soft">based in</span> New Delhi.
         </h2>
       </div>

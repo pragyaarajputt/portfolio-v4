@@ -182,7 +182,9 @@ export function MinimalHome() {
           <div className="m-sticky">
             <div ref={trackRef} className="m-track">
               <div className="m-hero">
-                <h1>I build the product, not just the page.</h1>
+                <h1>
+                  I build the product, <em>not just the page.</em>
+                </h1>
                 <div className="m-hero-side">
                   <p>
                     Full-stack developer · Jr. Software Developer at CETIZION Verifica, New Delhi
@@ -190,7 +192,9 @@ export function MinimalHome() {
                   <span className="m-hint">{animated ? "Scroll to deploy ↓" : "Selected work below ↓"}</span>
                 </div>
               </div>
-              <h2 className="m-work-title">Selected work</h2>
+              <h2 className="m-work-title">
+                Selected <em>work</em>
+              </h2>
               <div className="m-cards">
                 {projects.map((p) => (
                   <Card key={p.id} p={p} />
