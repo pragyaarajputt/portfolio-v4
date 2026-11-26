@@ -2,11 +2,14 @@
 
 My portfolio site, built with Next.js 16 and React 19 from the v4 desktop design.
 
+**Live:** https://pragyarajput.vercel.app
+
 ## What's on the page
 
 - **Hero:** a prompt that types itself over halftone typing hands.
 - **Snapshot:** terminal, code card and portrait.
 - **Projects:** a browser window with a dock.
+  - PolicyLens and CreatorDesk play recorded walkthroughs of the real apps (`public/projects/`). The video plays only while visible, never autoplays with reduced motion, and has a pause button (`ProjectVideo.tsx`).
   - PostDrip AI plays a guided tour made from real screenshots of the live app (`public/postdrip/`, captured 11 Nov 2026): Calendar, Create post with the AI caption step, Posts, Accounts and Analytics.
   - BTC/USDT Live Chart plays an animated chart that drops its connection, reconnects, fills the missed candles and goes live again. The data is simulated in the browser. The real app is at https://btc-live-chart-seven.vercel.app.
 - **Under the hood:** a clickable diagram of what happens when you schedule a post in PostDrip, checked against the PostDrip source.
@@ -22,6 +25,8 @@ All animations respect `prefers-reduced-motion`. Scrolling assembles cards, chip
 | `src/components/HomePage.tsx` | State: typing prompt, project dock and flow diagram |
 | `src/components/BtcScreen.tsx` | The animated BTC chart screen (SVG) |
 | `src/components/DevChrome.tsx` | Editor-style status bar and the command palette (Ctrl/⌘+K or /) |
+| `src/components/ProjectVideo.tsx` | Demo-video screen for PolicyLens and CreatorDesk |
+| `src/app/opengraph-image.tsx`, `sitemap.ts`, `robots.ts` | Share preview image, sitemap and robots; Person structured data is in `page.tsx` |
 | `src/components/PostDripScreen.tsx` | The PostDrip tour: real screenshots, a cursor and the typed AI caption |
 | `src/data/content.ts` | All facts and copy. Every claim comes from my resume or my repos |
 | `src/app/v4.css` | Shared classes and keyframes from the design |
