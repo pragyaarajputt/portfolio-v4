@@ -172,7 +172,7 @@ export function MinimalHome() {
             Resume
           </a>
         </nav>
-        <a href={`mailto:${links.email}`} className="m-nav-cta">
+        <a href="#contact" className="m-nav-cta">
           Say hello
         </a>
       </header>
@@ -221,7 +221,7 @@ export function MinimalHome() {
       <footer className="m-footer">
         <span>Pragya Rajput</span>
         <nav aria-label="Elsewhere">
-          <a href={`mailto:${links.email}`}>Email</a>
+          <a href="#contact">Email</a>
           <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>

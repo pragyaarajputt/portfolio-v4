@@ -1,4 +1,5 @@
 import { links } from "@/data/content";
+import { EmailActions } from "./EmailActions";
 
 // Every line here restates a fact already on the site (content.ts and the previous design's sections).
 const stats = [
@@ -117,7 +118,7 @@ export function About() {
         </article>
 
         {/* Contact */}
-        <article className="a-tile a-pink a-contact">
+        <article id="contact" className="a-tile a-pink a-contact">
           <span className="a-badge" aria-hidden="true">
             open to
             <br />
@@ -128,11 +129,9 @@ export function About() {
           <div>
             <p className="a-label">Let’s talk</p>
             <p className="a-cta-line">Open to full-time roles. Email is the fastest way to reach me.</p>
+            <EmailActions email={links.email} />
           </div>
           <div className="a-cta">
-            <a href={`mailto:${links.email}`} className="m-pill">
-              {links.email}
-            </a>
             <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="m-pill m-pill-line">
               LinkedIn ↗
             </a>
